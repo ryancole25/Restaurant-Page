@@ -4,29 +4,71 @@
 
 body {
   margin: 0px;
+  background-color: lightblue;
 }
 
 .header {
+  position: fixed;
   display: flex;
+  width: 100vw;
   gap: 50px;
-  border: solid black 2px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .leftside {
   display: flex;
   align-items: center;
+  margin-left: 15px;
 }
 
 .logo img {
   height: 100px;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 10px;
 }
 
 .rightside {
   display: flex;
-  width: 100vw;
+  width: 100%;
   justify-content: space-around;
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   font-weight: bold;
+  color: white;
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.selector:hover {
+  color: lightblue;
+}
+
+.Home .circle {
+  display: inline;
+  background-color: lightblue;
+}
+
+.Menu .circle {
+  display: inline;
+}
+
+.Reservations .circle {
+  display: inline;
+}
+
+.Contact .circle {
+  display: inline;
 }
