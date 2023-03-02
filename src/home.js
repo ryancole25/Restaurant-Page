@@ -2,6 +2,7 @@ function homePage() {
   const content = document.querySelector("#content");
   content.appendChild(photoDiv());
   content.appendChild(mainContainerDiv());
+  content.appendChild(footer());
 }
 
 // Adds main photo for the homepage
@@ -110,6 +111,31 @@ function mainContainerDiv() {
   mainContainer.appendChild(rightContainer);
 
   return mainContainer;
+}
+
+function footer() {
+  const footer = document.createElement("div");
+  footer.classList.add("footer");
+
+  const mediaApps = document.createElement("div");
+  mediaApps.classList.add("media-apps");
+
+  const facebook = document.createElement("a");
+
+  facebook.target = "_blank";
+  facebook.href = "http://www.facebook.com";
+  facebook.innerHTML = "<img src=../facebooklogo.svg target=_blank>";
+
+  const instagram = document.createElement("a");
+  instagram.href = "http://www.instagram.com";
+  instagram.target = "_blank";
+  instagram.innerHTML = "<img src=../instagramlogo.svg target=_blank>";
+
+  mediaApps.appendChild(facebook);
+  mediaApps.appendChild(instagram);
+
+  footer.appendChild(mediaApps);
+  return footer;
 }
 
 export { homePage };
