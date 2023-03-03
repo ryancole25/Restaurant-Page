@@ -1,5 +1,6 @@
 import "./style.css";
 import { homePage } from "./home.js";
+import { menuPage } from "./menu.js";
 
 homePage();
 
@@ -25,7 +26,6 @@ function toggleLivePage(id) {
 // Clears the site content except for the menu bar
 function removeContent() {
   const content = document.querySelector("#content");
-  console.log(content);
   while (content.firstChild) {
     content.removeChild(content.lastChild);
   }
@@ -35,5 +35,7 @@ function removeContent() {
 function addContent(id) {
   if (id == "Home") {
     homePage();
+  } else if (id == "Menu") {
+    menuPage();
   }
 }
