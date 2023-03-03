@@ -2,7 +2,7 @@ import "./style.css";
 import { homePage } from "./home.js";
 import { menuPage } from "./menu.js";
 
-homePage();
+// homePage();
 
 // Listens for changing the page from the menu bar
 const selectors = document.querySelectorAll(".selector");

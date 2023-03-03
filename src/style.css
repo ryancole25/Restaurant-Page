@@ -175,3 +175,73 @@ body {
 .media-apps img {
   height: 50px;
 }
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.food {
+  display: flex;
+  justify-content: space-around;
+}
+
+.food-type {
+  display: grid;
+  width: 90%;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 30px;
+  padding-bottom: 20px;
+}
+
+.seafoodheader {
+  position: relative;
+}
+
+.seafoodheader img {
+  width: 100vw;
+  margin: -300px 100px 0 0px;
+}
+
+.title {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  justify-items: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.food-item {
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 3fr 1fr;
+}
+
+.price {
+  font-weight: 100;
+  grid-column-start: 2;
+}
+
+.description {
+  font-weight: 100;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.food div img {
+  height: 400px;
+  border-radius: 10px;
+}
+
+.seafoodheader .banner {
+  top: 70%;
+  font-size: 40px;
+}
