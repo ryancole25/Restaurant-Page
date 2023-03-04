@@ -3,6 +3,7 @@ import { homePage } from "./home.js";
 import { menuPage } from "./menu.js";
 
 // homePage();
+menuPage();
 
 // Listens for changing the page from the menu bar
 const selectors = document.querySelectorAll(".selector");
