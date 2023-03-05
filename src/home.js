@@ -3,6 +3,7 @@ function homePage() {
   content.appendChild(photoDiv());
   content.appendChild(mainContainerDiv());
   content.appendChild(footer());
+  return;
 }
 
 // Adds main photo for the homepage

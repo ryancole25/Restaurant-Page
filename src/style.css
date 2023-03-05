@@ -197,6 +197,13 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 30px;
   padding-bottom: 20px;
+  margin-top: 30px;
+}
+
+.food-image {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .seafoodheader {
@@ -215,6 +222,12 @@ body {
   justify-items: center;
   align-items: center;
   font-size: 30px;
+  font-family: Helvetica;
+  color: var(--charcoal);
+}
+.food .title img {
+  width: 250px;
+  height: auto;
 }
 
 .food-item {
@@ -227,9 +240,11 @@ body {
 .price {
   font-weight: 100;
   grid-column-start: 2;
+  font-family: Helvetica;
 }
 
 .description {
+  font-family: Arial;
   font-weight: 100;
   grid-row-start: 2;
   grid-column-start: 1;
@@ -244,4 +259,20 @@ body {
 .seafoodheader .banner {
   top: 70%;
   font-size: 40px;
+}
+
+.name {
+  color: var(--deepblue);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.github {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: Helvetica;
+  color: white;
 }

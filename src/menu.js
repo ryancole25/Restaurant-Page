@@ -34,12 +34,28 @@ class MainCourses {
   }
 }
 
+class Desserts {
+  constructor() {
+    this.dessertList = [];
+  }
+  newDessert(item, description, price) {
+    let z = new foodItem(item, description, price);
+    this.dessertList.push(z);
+    return z;
+  }
+  get allDesserts() {
+    return this.dessertList;
+  }
+}
+
+// Edit Apps here
 let appArray = new Appetizers();
 appArray.newApp("Garlic Bread", "3 warm breadsticks", "$6");
 appArray.newApp("Mussels", "White wine and garlic", "$20");
 appArray.newApp("Fried Calamari", "Lemon, served with calimari sauce", "$13");
 appArray.newApp("Buffalo Shrimp", "5 shrimp", "$8");
 
+// Edit Main Courses here
 let mainCourseArray = new MainCourses();
 mainCourseArray.newMainCourse(
   "Lobster Roll",
@@ -59,7 +75,7 @@ mainCourseArray.newMainCourse(
 mainCourseArray.newMainCourse(
   "Grilled Scallops",
   "6 scallops, with lemon",
-  "27"
+  "$27"
 );
 mainCourseArray.newMainCourse("Grilled Chicken", "Land food", "$14");
 mainCourseArray.newMainCourse("Fish Tacos", "3 tacos with toppings", "$19");
@@ -71,6 +87,12 @@ mainCourseArray.newMainCourse(
 mainCourseArray.newMainCourse("Sea Bass", "Flown in daily", "$34");
 mainCourseArray.newMainCourse("Cheeseburger", "Lettuce, tomato, onion", "$14");
 
+// Edit Desserts here
+let dessertArray = new Desserts();
+dessertArray.newDessert("Cheesecake", "Garnished with strawberries", "$9");
+dessertArray.newDessert("Ice Cream", "Vanilla, with hot fudge", "$5");
+dessertArray.newDessert("Fudge Brownie", "With nuts", "$6");
+
 function menuPage() {
   const content = document.querySelector("#content");
   // Add photo of lake header
@@ -78,7 +100,8 @@ function menuPage() {
   // Add the menu and photos
   content.appendChild(menuSection());
 
-  console.log(appArray.allAppetizers.length);
+  content.appendChild(footer());
+  return;
 }
 
 function addSeafoodHeader() {
@@ -95,9 +118,10 @@ function addSeafoodHeader() {
 function menuSection() {
   const food = document.createElement("div");
   food.classList.add("food");
-  let div = document.createElement("div");
-  div.innerHTML = `<img src="../fried-calamari.jpeg">`;
-  food.appendChild(div);
+  let foodImage = document.createElement("div");
+  foodImage.classList.add("food-image");
+  foodImage.innerHTML = `<img src="../fried-calamari.jpeg"><img src="../lobster-roll.jpeg">`;
+  food.appendChild(foodImage);
 
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menu-container");
@@ -107,7 +131,7 @@ function menuSection() {
 
   let title = document.createElement("div");
   title.classList.add("title");
-  title.innerHTML = "APPETIZERS";
+  title.innerHTML = "APPETIZERS <img src=../waves.png>";
   foodType.appendChild(title);
 
   // Appetizers section
@@ -123,10 +147,10 @@ function menuSection() {
 
   title = document.createElement("div");
   title.classList.add("title");
-  title.innerHTML = "MAIN COURSES";
+  title.innerHTML = "MAIN COURSES <img src=../waves.png>";
   foodType.appendChild(title);
 
-  // Appetizers section
+  // Main Course Section
   for (let i = 0; i < mainCourseArray.allMainCourses.length; i++) {
     foodType.appendChild(
       addFoodItem(
@@ -137,12 +161,29 @@ function menuSection() {
     );
   }
 
+  title = document.createElement("div");
+  title.classList.add("title");
+  title.innerHTML = "DESSERTS <img src=../waves.png>";
+  foodType.appendChild(title);
+
+  // Main Course Section
+  for (let i = 0; i < dessertArray.allDesserts.length; i++) {
+    foodType.appendChild(
+      addFoodItem(
+        dessertArray.allDesserts[i].item,
+        dessertArray.allDesserts[i].description,
+        dessertArray.allDesserts[i].price
+      )
+    );
+  }
+
   menuContainer.appendChild(foodType);
   food.appendChild(menuContainer);
 
-  div = document.createElement("div");
-  div.innerHTML = `<img src="../garlic-breadsticks.jpeg">`;
-  food.appendChild(div);
+  foodImage = document.createElement("div");
+  foodImage.classList.add("food-image");
+  foodImage.innerHTML = `<img src="../garlic-breadsticks.jpeg"><img src="../shrimp-skewers.jpeg">`;
+  food.appendChild(foodImage);
 
   return food;
 }
@@ -168,6 +209,31 @@ function addFoodItem(item, description, price) {
   foodItem.appendChild(characteristics);
 
   return foodItem;
+}
+
+function footer() {
+  const footer = document.createElement("div");
+  footer.classList.add("footer");
+
+  const mediaApps = document.createElement("div");
+  mediaApps.classList.add("media-apps");
+
+  const facebook = document.createElement("a");
+
+  facebook.target = "_blank";
+  facebook.href = "http://www.facebook.com";
+  facebook.innerHTML = "<img src=../facebooklogo.svg target=_blank>";
+
+  const instagram = document.createElement("a");
+  instagram.href = "http://www.instagram.com";
+  instagram.target = "_blank";
+  instagram.innerHTML = "<img src=../instagramlogo.svg target=_blank>";
+
+  mediaApps.appendChild(facebook);
+  mediaApps.appendChild(instagram);
+
+  footer.appendChild(mediaApps);
+  return footer;
 }
 
 export { menuPage };

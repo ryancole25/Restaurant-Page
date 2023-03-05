@@ -2,8 +2,16 @@ import "./style.css";
 import { homePage } from "./home.js";
 import { menuPage } from "./menu.js";
 
-// homePage();
-menuPage();
+// Start on the home page;
+homePage();
+
+// Add the Menu button listener to the home page
+let menuButton = document.querySelector("button");
+menuButton.addEventListener("click", () => {
+  toggleLivePage("Menu");
+  removeContent();
+  menuPage();
+});
 
 // Listens for changing the page from the menu bar
 const selectors = document.querySelectorAll(".selector");
@@ -36,6 +44,13 @@ function removeContent() {
 function addContent(id) {
   if (id == "Home") {
     homePage();
+    menuButton = document.querySelector("button");
+    menuButton.addEventListener("click", () => {
+      console.log("listener");
+      toggleLivePage("Menu");
+      removeContent();
+      menuPage();
+    });
   } else if (id == "Menu") {
     menuPage();
   }
