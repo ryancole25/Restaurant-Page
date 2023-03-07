@@ -1,6 +1,7 @@
 import "./style.css";
 import { homePage } from "./home.js";
 import { menuPage } from "./menu.js";
+import { contactPage } from "./contact.js";
 
 // Start on the home page;
 homePage();
@@ -53,5 +54,7 @@ function addContent(id) {
     });
   } else if (id == "Menu") {
     menuPage();
+  } else if (id == "Contact") {
+    contactPage();
   }
 }

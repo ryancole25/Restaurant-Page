@@ -276,3 +276,29 @@ body {
   font-family: Helvetica;
   color: white;
 }
+
+.outside-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  color: white;
+  font-size: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container {
+  display: flex;
+}
+
+.left-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-form {
+  display: flex;
+  flex-direction: column;
+}
