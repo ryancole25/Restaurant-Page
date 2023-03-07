@@ -291,6 +291,11 @@ body {
 
 .form-container {
   display: flex;
+  gap: 20px;
+}
+
+input {
+  margin-bottom: 20px;
 }
 
 .left-form {
@@ -301,4 +306,37 @@ body {
 .right-form {
   display: flex;
   flex-direction: column;
+}
+
+.form-pair {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 5px;
+}
+
+#firstname,
+#lastname {
+  width: 300px;
+}
+
+label {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form button {
+  margin-top: 12px;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  color: var(--deepblue);
+  background-color: white;
+}
+
+form button:hover {
+  background-color: lightgrey;
+  cursor: pointer;
 }

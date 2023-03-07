@@ -28,26 +28,117 @@ function contactForm() {
   heading.classList.add("heading");
   heading.innerHTML = "CONTACT US";
   outsideContainer.appendChild(heading);
+  outsideContainer.app;
   outsideContainer.appendChild(formContainer());
   return outsideContainer;
 }
 
 function formContainer() {
+  const form = document.createElement("form");
+  form.setAttribute("action", "/url");
+  form.setAttribute("method", "post");
+
   const formContain = document.createElement("div");
   formContain.classList.add("form-container");
 
   const leftForm = document.createElement("div");
   leftForm.classList.add("left-form");
-  // Add more left form stuff
+  leftForm.appendChild(leftFormContent("firstname", "FIRST NAME"));
 
   const rightForm = document.createElement("div");
   rightForm.classList.add("right-form");
-  // Add more right form stuff
+  rightForm.appendChild(rightFormContent("lastname", "LAST NAME"));
 
   formContain.appendChild(leftForm);
   formContain.appendChild(rightForm);
 
-  return formContain;
+  form.appendChild(formContain);
+  form.appendChild(emailFormContent());
+  form.appendChild(messageFormContent());
+  form.append(submitButton());
+  return form;
+}
+
+function rightFormContent(id, text) {
+  let formPair = document.createElement("div");
+  formPair.classList.add("form-pair");
+
+  let label = document.createElement("label");
+  label.setAttribute("for", `${id}`);
+  label.innerHTML = `${text}`;
+  let input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("id", `${id}`);
+  input.setAttribute("name", `${id}`);
+
+  formPair.appendChild(label);
+  formPair.appendChild(input);
+
+  return formPair;
+}
+
+function leftFormContent(id, text) {
+  let formPair = document.createElement("div");
+  formPair.classList.add("form-pair");
+
+  let label = document.createElement("label");
+  label.setAttribute("for", `${id}`);
+  label.innerHTML = `${text}`;
+  let input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("id", `${id}`);
+  input.setAttribute("name", `${id}`);
+  input.setAttribute("required", "");
+
+  formPair.appendChild(label);
+  formPair.appendChild(input);
+
+  return formPair;
+}
+
+function emailFormContent() {
+  let formPair = document.createElement("div");
+  formPair.classList.add("form-pair");
+  let label = document.createElement("label");
+  label.setAttribute("for", `email`);
+  label.innerHTML = `EMAIL`;
+  let input = document.createElement("input");
+  input.setAttribute("type", "email");
+  input.setAttribute("id", `email`);
+  input.setAttribute("name", `email`);
+  input.setAttribute("required", "");
+
+  formPair.appendChild(label);
+  formPair.appendChild(input);
+
+  return formPair;
+}
+
+function messageFormContent() {
+  let formPair = document.createElement("div");
+  formPair.classList.add("form-pair");
+  let label = document.createElement("label");
+  label.setAttribute("for", `message`);
+  label.innerHTML = `MESSAGE`;
+  let textArea = document.createElement("textarea");
+  textArea.setAttribute("type", "text");
+  textArea.setAttribute("id", `message`);
+  textArea.setAttribute("name", `message`);
+  textArea.setAttribute("rows", `20`);
+  textArea.setAttribute("cols", `75`);
+  textArea.setAttribute("required", "");
+
+  formPair.appendChild(label);
+  formPair.appendChild(textArea);
+
+  return formPair;
+}
+
+function submitButton() {
+  const submitBtn = document.createElement("button");
+  submitBtn.setAttribute("type", "submit");
+  submitBtn.innerHTML = "SUBMIT";
+  return submitBtn;
 }
 
 function footer() {
