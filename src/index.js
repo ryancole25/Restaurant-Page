@@ -14,6 +14,20 @@ menuButton.addEventListener("click", () => {
   menuPage();
 });
 
+// Have the main photo take you back to the home page
+const logoImage = document.querySelector(".logo");
+logoImage.addEventListener("click", () => {
+  toggleLivePage("Home");
+  removeContent();
+  homePage();
+  menuButton = document.querySelector("button");
+  menuButton.addEventListener("click", () => {
+    toggleLivePage("Menu");
+    removeContent();
+    menuPage();
+  });
+});
+
 // Listens for changing the page from the menu bar
 const selectors = document.querySelectorAll(".selector");
 selectors.forEach((selector) =>
@@ -24,6 +38,7 @@ selectors.forEach((selector) =>
   })
 );
 
+// Changes the page based on the id of what you clicked on
 function toggleLivePage(id) {
   let element = document.querySelector(`.${id.toLowerCase()}`);
 
@@ -47,7 +62,6 @@ function addContent(id) {
     homePage();
     menuButton = document.querySelector("button");
     menuButton.addEventListener("click", () => {
-      console.log("listener");
       toggleLivePage("Menu");
       removeContent();
       menuPage();

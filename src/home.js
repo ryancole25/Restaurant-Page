@@ -53,15 +53,15 @@ function mainContainerDiv() {
 
   let address = document.createElement("div");
   address.classList.add("address");
-  address.textContent = "400 Grandview Road";
+  address.innerHTML = `<a href="https://www.google.com/maps/place/100+Red+Dog+Ln,+Lake+Milton,+OH+44429/@41.1147229,-80.9833118,18z/data=!3m1!4b1!4m5!3m4!1s0x88315acc3f5c52d7:0x58d346d5bb301e8c!8m2!3d41.1147229!4d-80.9825301" target="_blank">100 Red Dog Lane</a>`;
   location.appendChild(address);
   address = document.createElement("div");
   address.classList.add("address");
-  address.textContent = "Lake Milton, Ohio 44429";
+  address.innerHTML = `<a href="https://www.google.com/maps/place/100+Red+Dog+Ln,+Lake+Milton,+OH+44429/@41.1147229,-80.9833118,18z/data=!3m1!4b1!4m5!3m4!1s0x88315acc3f5c52d7:0x58d346d5bb301e8c!8m2!3d41.1147229!4d-80.9825301" target="_blank">Lake Milton, Ohio 44429</a>`;
   location.appendChild(address);
   address = document.createElement("div");
   address.classList.add("address");
-  address.textContent = "";
+  address.innerHTML = "";
   location.appendChild(address);
 
   leftContainer.appendChild(logo);

@@ -33,6 +33,7 @@ body {
   background-color: white;
   border-radius: 15px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .rightside {
@@ -159,6 +160,10 @@ body {
   font-weight: 500;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.address a {
+  color: inherit;
 }
 
 .footer {
@@ -297,7 +302,7 @@ body {
 input,
 textarea {
   margin-bottom: 20px;
-  border: none;
+  border: 3px solid lightgray;
 }
 
 .left-form {
@@ -352,4 +357,8 @@ form button:hover {
   font-family: Helvetica;
   font-size: 18px;
   color: white;
+}
+
+input {
+  height: 30px;
 }
