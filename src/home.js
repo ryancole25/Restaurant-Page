@@ -1,3 +1,5 @@
+import LakeSunset from "./LakeMilton2.jpeg";
+
 function homePage() {
   const content = document.querySelector("#content");
   content.appendChild(photoDiv());
@@ -10,7 +12,11 @@ function homePage() {
 function photoDiv() {
   const photoDiv = document.createElement("div");
   photoDiv.classList.add("photo");
-  photoDiv.innerHTML = " <img src=../LakeMilton2.jpeg>";
+
+  const myLakeSunset = new Image();
+  console.log(myLakeSunset);
+  myLakeSunset.src = LakeSunset;
+  photoDiv.appendChild(myLakeSunset);
 
   const banner = document.createElement("div");
   banner.classList.add("banner");
