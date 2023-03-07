@@ -135,10 +135,87 @@ function messageFormContent() {
 }
 
 function submitButton() {
+  const submitDiv = document.createElement("div");
+  submitDiv.classList.add("submission");
+  const messageDiv = document.createElement("div");
+  messageDiv.classList.add("message-div");
+
   const submitBtn = document.createElement("button");
   submitBtn.setAttribute("type", "submit");
   submitBtn.innerHTML = "SUBMIT";
-  return submitBtn;
+
+  // Check for form submission
+  submitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    checkValid();
+  });
+
+  submitDiv.appendChild(submitBtn);
+  submitDiv.appendChild(messageDiv);
+
+  return submitDiv;
+}
+
+function checkValid() {
+  let firstName = document.querySelector("#firstname");
+  let lastName = document.querySelector("#lastname");
+  let email = document.querySelector("#email");
+  let message = document.querySelector("#message");
+
+  // Require first name, email, and message
+  if (!firstName.value || !email.value || !message.value) {
+    let messageDiv = document.querySelector(".message-div");
+    messageDiv.textContent = "";
+    checkInputs(firstName, email, message);
+  } else {
+    clearInputs(firstName, lastName, email, message);
+  }
+}
+
+function checkInputs(firstName, email, message) {
+  if (!firstName.value) {
+    firstName.style.backgroundColor = "#FFDCD1";
+    firstName.style.outline = "1px solid red";
+  } else {
+    firstName.style.backgroundColor = "white";
+    firstName.style.outline = "none";
+  }
+
+  if (!email.value) {
+    email.style.backgroundColor = "#FFDCD1";
+    email.style.outline = "1px solid red";
+  } else {
+    email.style.backgroundColor = "white";
+    email.style.outline = "none";
+  }
+
+  if (!message.value) {
+    message.style.backgroundColor = "#FFDCD1";
+    message.style.outline = "1px solid red";
+  } else {
+    message.style.backgroundColor = "white";
+    message.style.outline = "none";
+  }
+}
+
+function clearInputs(firstName, lastName, email, message) {
+  let submission = document.querySelector(".submission");
+  let messageDiv = document.querySelector(".message-div");
+  messageDiv.textContent = `Thank you ${firstName.value}! We will get back to you shortly.`;
+  submission.appendChild(messageDiv);
+
+  firstName.value = "";
+  lastName.value = "";
+  email.value = "";
+  message.value = "";
+
+  firstName.style.backgroundColor = "white";
+  email.style.backgroundColor = "white";
+  message.style.backgroundColor = "white";
+
+  firstName.style.outline = "none";
+  email.style.outline = "none";
+  message.style.outline = "none";
 }
 
 function footer() {

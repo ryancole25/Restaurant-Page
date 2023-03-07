@@ -294,8 +294,10 @@ body {
   gap: 20px;
 }
 
-input {
+input,
+textarea {
   margin-bottom: 20px;
+  border: none;
 }
 
 .left-form {
@@ -325,7 +327,6 @@ label {
 }
 
 form button {
-  margin-top: 12px;
   font-size: 18px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 10px;
@@ -339,4 +340,16 @@ form button {
 form button:hover {
   background-color: lightgrey;
   cursor: pointer;
+}
+
+.submission {
+  display: flex;
+  gap: 20px;
+}
+
+.message-div {
+  align-self: center;
+  font-family: Helvetica;
+  font-size: 18px;
+  color: white;
 }
