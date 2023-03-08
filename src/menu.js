@@ -1,3 +1,13 @@
+import mainPhoto from "./images/LM-backdrop.jpeg";
+import calimariPhoto from "./images/fried-calamari.jpeg";
+import lobsterRollPhoto from "./images/lobster-roll.jpeg";
+import garlicBreadsticksPhoto from "./images/garlic-breadsticks.jpeg";
+import shrimpSkewersPhoto from "./images/shrimp-skewers.jpeg";
+import wavesPhoto from "./images/waves.png";
+
+import facebookLogo from "./images/facebooklogo.svg";
+import instagramLogo from "./images/instagramlogo.svg";
+
 class foodItem {
   constructor(item, description, price) {
     this.item = item;
@@ -107,7 +117,9 @@ function menuPage() {
 function addSeafoodHeader() {
   const seafoodHeader = document.createElement("div");
   seafoodHeader.classList.add("seafoodheader");
-  seafoodHeader.innerHTML = `<img src="../LM-backdrop.jpeg">`;
+  const mainImg = document.createElement("img");
+  mainImg.src = mainPhoto;
+  seafoodHeader.appendChild(mainImg);
   const banner = document.createElement("div");
   banner.classList.add("banner");
   banner.innerHTML = "MENU";
@@ -120,7 +132,12 @@ function menuSection() {
   food.classList.add("food");
   let foodImage = document.createElement("div");
   foodImage.classList.add("food-image");
-  foodImage.innerHTML = `<img src="../fried-calamari.jpeg"><img src="../lobster-roll.jpeg">`;
+  const calamariImg = document.createElement("img");
+  calamariImg.src = calimariPhoto;
+  foodImage.appendChild(calamariImg);
+  const lobsterRollImg = document.createElement("img");
+  lobsterRollImg.src = lobsterRollPhoto;
+  foodImage.appendChild(lobsterRollImg);
   food.appendChild(foodImage);
 
   const menuContainer = document.createElement("div");
@@ -131,7 +148,10 @@ function menuSection() {
 
   let title = document.createElement("div");
   title.classList.add("title");
-  title.innerHTML = "APPETIZERS <img src=../waves.png>";
+  let wavesImg = document.createElement("img");
+  wavesImg.src = wavesPhoto;
+  title.innerHTML = "APPETIZERS";
+  title.appendChild(wavesImg);
   foodType.appendChild(title);
 
   // Appetizers section
@@ -147,7 +167,10 @@ function menuSection() {
 
   title = document.createElement("div");
   title.classList.add("title");
-  title.innerHTML = "MAIN COURSES <img src=../waves.png>";
+  title.innerHTML = "MAIN COURSES";
+  wavesImg = document.createElement("img");
+  wavesImg.src = wavesPhoto;
+  title.appendChild(wavesImg);
   foodType.appendChild(title);
 
   // Main Course Section
@@ -163,7 +186,10 @@ function menuSection() {
 
   title = document.createElement("div");
   title.classList.add("title");
-  title.innerHTML = "DESSERTS <img src=../waves.png>";
+  title.innerHTML = "DESSERTS";
+  wavesImg = document.createElement("img");
+  wavesImg.src = wavesPhoto;
+  title.appendChild(wavesImg);
   foodType.appendChild(title);
 
   // Main Course Section
@@ -182,7 +208,12 @@ function menuSection() {
 
   foodImage = document.createElement("div");
   foodImage.classList.add("food-image");
-  foodImage.innerHTML = `<img src="../garlic-breadsticks.jpeg"><img src="../shrimp-skewers.jpeg">`;
+  const breadsticksImg = document.createElement("img");
+  breadsticksImg.src = garlicBreadsticksPhoto;
+  foodImage.appendChild(breadsticksImg);
+  const shrimpSkewersImg = document.createElement("img");
+  shrimpSkewersImg.src = shrimpSkewersPhoto;
+  foodImage.appendChild(shrimpSkewersImg);
   food.appendChild(foodImage);
 
   return food;
@@ -222,12 +253,18 @@ function footer() {
 
   facebook.target = "_blank";
   facebook.href = "http://www.facebook.com";
-  facebook.innerHTML = "<img src=../facebooklogo.svg target=_blank>";
+
+  const fbLogo = document.createElement("img");
+  fbLogo.src = facebookLogo;
+  facebook.appendChild(fbLogo);
 
   const instagram = document.createElement("a");
   instagram.href = "http://www.instagram.com";
   instagram.target = "_blank";
-  instagram.innerHTML = "<img src=../instagramlogo.svg target=_blank>";
+
+  const igLogo = document.createElement("img");
+  igLogo.src = instagramLogo;
+  instagram.appendChild(igLogo);
 
   mediaApps.appendChild(facebook);
   mediaApps.appendChild(instagram);

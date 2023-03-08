@@ -3,6 +3,29 @@ import { homePage } from "./home.js";
 import { menuPage } from "./menu.js";
 import { contactPage } from "./contact.js";
 
+import restaurantLogo from "./images/LMSeafoodLogo.png";
+import githubLogo from "./images/github-logo.svg";
+
+// Adds main logo and the github logo on page
+addLogo();
+addGithubLogo();
+
+// Adds the logo to the header
+function addLogo() {
+  const logoDiv = document.querySelector(".logo");
+  const resLogo = document.createElement("img");
+  resLogo.src = restaurantLogo;
+  logoDiv.appendChild(resLogo);
+}
+
+// Adds github logo to bottom of page
+function addGithubLogo() {
+  const a = document.querySelector("a");
+  const ghLogo = document.createElement("img");
+  ghLogo.src = githubLogo;
+  a.appendChild(ghLogo);
+}
+
 // Start on the home page;
 homePage();
 

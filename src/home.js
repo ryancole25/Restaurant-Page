@@ -1,4 +1,7 @@
-import LakeSunset from "./LakeMilton2.jpeg";
+import lakeSunset from "./images/LakeMilton2.jpeg";
+import mainLogo from "./images/LMSeafoodLogo.png";
+import facebookLogo from "./images/facebooklogo.svg";
+import instagramLogo from "./images/instagramlogo.svg";
 
 function homePage() {
   const content = document.querySelector("#content");
@@ -13,10 +16,9 @@ function photoDiv() {
   const photoDiv = document.createElement("div");
   photoDiv.classList.add("photo");
 
-  const myLakeSunset = new Image();
-  console.log(myLakeSunset);
-  myLakeSunset.src = LakeSunset;
-  photoDiv.appendChild(myLakeSunset);
+  const mainImg = document.createElement("img");
+  mainImg.src = lakeSunset;
+  photoDiv.appendChild(mainImg);
 
   const banner = document.createElement("div");
   banner.classList.add("banner");
@@ -50,7 +52,10 @@ function mainContainerDiv() {
   // Logo
   const logo = document.createElement("div");
   logo.classList.add("logo");
-  logo.innerHTML = "<img src=../LMSeafoodLogo.png>";
+  let logoImage = document.createElement("img");
+  logoImage.src = mainLogo;
+  logo.appendChild(logoImage);
+  // logo.innerHTML = "<img src=../LMSeafoodLogo.png>";
 
   // Location
   const location = document.createElement("div");
@@ -131,12 +136,18 @@ function footer() {
 
   facebook.target = "_blank";
   facebook.href = "http://www.facebook.com";
-  facebook.innerHTML = "<img src=../facebooklogo.svg target=_blank>";
+
+  const fbLogo = document.createElement("img");
+  fbLogo.src = facebookLogo;
+  facebook.appendChild(fbLogo);
 
   const instagram = document.createElement("a");
   instagram.href = "http://www.instagram.com";
   instagram.target = "_blank";
-  instagram.innerHTML = "<img src=../instagramlogo.svg target=_blank>";
+
+  const igLogo = document.createElement("img");
+  igLogo.src = instagramLogo;
+  instagram.appendChild(igLogo);
 
   mediaApps.appendChild(facebook);
   mediaApps.appendChild(instagram);
